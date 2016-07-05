@@ -1,23 +1,28 @@
-# memento
+Use `this.$notify(message)` to throw a snackbar notification from anywhere in your Vue app!
 
-## To Install
+Note: this plugin requires that you have the Material Design Lite stylesheet and script in your application.
 
-> Include the following in your main.js: 
-# Vue.plugin(VueSnackbar, selector)
+## To Use
 
-> Add the MDL snackbar component to your application 
-#  <div id="selector" class="mdl-js-snackbar mdl-snackbar">
-#    <div class="mdl-snackbar__text"></div>
-#    <button class="mdl-snackbar__action" type="button"></button>
-#  </div>
+Copy and paste this snippet into your application (hint: I made it a Snackbar.vue component) 
+```
+<div id="snackbar-notification" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+```
 
-> Then you can run this.$notify(message) on any component and it will work :)
+Import VueSnackbar into your main.js file
+```
+import VueSnackbar from 'vue-mdl-snackbar'
+```
 
-## Build Setup
+Install the plugin by running the following in your main.js: 
+```
+Vue.use(VueSnackbar, '#snackbar-notification')
+```
 
-``` bash
-# install dependencies
-npm install
-
-# build for production
-npm run build
+> Run the following on any component to push a snackbar notification
+```
+this.$notify(message)
+```
